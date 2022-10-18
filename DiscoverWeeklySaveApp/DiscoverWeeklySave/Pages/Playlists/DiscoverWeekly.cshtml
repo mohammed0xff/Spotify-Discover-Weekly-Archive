@@ -1,0 +1,60 @@
+﻿@page
+@model DiscoverWeeklyModel 
+@inject SpotifyClientBuilder spotifyBuilder
+@using SpotifyAPI.Web;
+
+@{
+  ViewData["Title"] = "DiscoverWeekly";
+  ViewData["Page"] = "index";
+}
+
+<div class="text-center">
+
+  <h1 class="display-4">
+    Welcome to DiscoverWeekly,
+  </h1>
+
+  <a href ="@Model.DiscoverWeeklyPlaylist.ExternalUrls.FirstOrDefault().Value">
+    <img width="400" height="400" src="@Model.DiscoverWeeklyPlaylist.Images.FirstOrDefault().Url">
+  </a>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Cover</th>
+        <th>Track</th>
+        <th>Artist</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      @{
+        foreach (var item in Model.DiscoverWeeklyPlaylist.Tracks.Items)
+        {
+          var track =(FullTrack) item.Track;
+          <tr>
+          <td>
+              <a href="@track.ExternalUrls.FirstOrDefault().Value">
+                <img width="100" height="100" src="@track.Album.Images.FirstOrDefault().Url" />
+              </a>
+          </td>
+              <td>
+                @track.Name
+              </td>
+              <td>
+                @track.Artists.FirstOrDefault().Name
+              </td>
+          </tr>
+        }
+      }
+    </tbody>
+  </table>
+
+    <div class="align-content-center">
+        <form method="post" asp-route="Playlists/DiscoverWeekly">
+            <input class="btn-primary" type="submit" value="Archive Playlist"/>
+        </form>
+    </div>
+
+</div>
+

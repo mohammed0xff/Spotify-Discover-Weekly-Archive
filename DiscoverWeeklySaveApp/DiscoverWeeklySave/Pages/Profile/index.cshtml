@@ -1,0 +1,36 @@
+﻿@page
+@model ProfileModel
+@{
+    ViewData["Title"] = "Profile";
+    ViewData["Page"] = "profile";
+}
+
+<a hrefaccesskey="@Model.CurrentUser.Uri">
+<img src="@Model.CurrentUser.Images.FirstOrDefault().Url"/>
+</a>
+<table class="table table-striped">
+  <thead>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Id</td>
+      <td>@Model.CurrentUser.Id</td>
+    </tr>
+    <tr>
+      <td>DisplayName</td>
+      <td>@Model.CurrentUser.DisplayName</td>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td>@Model.CurrentUser.Email</td>
+    </tr>
+    <tr>
+      <td>Followrs Count</td>
+      <td>@Model.CurrentUser.Followers.Total</td>
+    </tr>
+  </tbody>
+</table>
+
+<form method="post" asp-controller="Profile">
+  <input type="submit" value="Logout"/>
+</form>

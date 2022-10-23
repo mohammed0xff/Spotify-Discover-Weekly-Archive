@@ -2,6 +2,10 @@
 
 Archive DiscoverWeekly playlist with one click. Using [SpotifyAPI-NET](https://github.com/JohnnyCrazy/SpotifyAPI-NET).
 
+<p align="center">
+  <img src= "https://github.com/mohammed0xff/Spotify-Discover-Weekly-Archive/blob/main/DiscoverWeeklySaveApp/DiscoverWeeklySave/demo.gif" />
+</p>
+
 # Usage 
 * Go to [Spotify Dashboard](https://developer.spotify.com/dashboard/) 
 * Login and create new application.

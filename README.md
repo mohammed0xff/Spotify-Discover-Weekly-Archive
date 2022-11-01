@@ -15,3 +15,5 @@ Archive DiscoverWeekly playlist with one click. Using [SpotifyAPI-NET](https://g
 * Save `Client ID` and `Client Secret` somewhere safe.
 * Add them to `appsettings.json`
 * Fire the application.
+
+### Browse [Spotify Web API](https://developer.spotify.com/documentation/web-api/reference/#/)
